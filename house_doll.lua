@@ -15,8 +15,9 @@ function action.onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	else
 		-- Continue with script if the above conditions are false
 		player:teleportTo(getHouseEntry(home))
-		--print(player:getCondition(CONDITION_INFIGHT))
+		--print(player:getCondition(CONDITION_INFIGHT)) -- Debug message
 		item:remove(1)
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have been teleported to your house.")
 		return true
 	end
 end
